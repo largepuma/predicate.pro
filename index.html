@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Predicate — Tools for Cross-Border Sellers</title>
+  <meta name="description" content="Predicate builds AI-powered SaaS tools that help cross-border e-commerce sellers operate smarter, faster, and more profitably." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a0f;
+      --bg-card:   #111118;
+      --bg-card2:  #16161f;
+      --border:    rgba(255,255,255,0.08);
+      --border-hi: rgba(255,255,255,0.15);
+      --text:      #e8e8f0;
+      --muted:     #8888a0;
+      --accent:    #7c6cfc;
+      --accent2:   #5eead4;
+      --accent3:   #f472b6;
+      --radius:    14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ───────── NAV ───────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      height: 64px;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo svg {
+      width: 28px; height: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.45rem 1.1rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 8px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* ───────── HERO ───────── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem clamp(1.5rem, 5vw, 4rem) 5rem;
+      overflow: hidden;
+    }
+
+    /* animated gradient orbs */
+    .hero::before, .hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+    .hero::before {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(124,108,252,0.18) 0%, transparent 70%);
+      top: -150px; left: -100px;
+    }
+    .hero::after {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(94,234,212,0.12) 0%, transparent 70%);
+      bottom: -100px; right: -80px;
+      animation-delay: -6s;
+    }
+
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(40px, 30px) scale(1.08); }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      background: rgba(94,234,212,0.08);
+      border: 1px solid rgba(94,234,212,0.2);
+      padding: 0.3rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent2);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      max-width: 760px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.75rem 1.75rem;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 10px;
+      transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 0 30px rgba(124,108,252,0.35);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 0 45px rgba(124,108,252,0.5);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.75rem 1.75rem;
+      background: transparent;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+      border-radius: 10px;
+      border: 1px solid var(--border-hi);
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+    }
+
+    /* ───────── SECTION WRAPPER ───────── */
+    section {
+      padding: 5rem clamp(1.5rem, 5vw, 4rem);
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ───────── PRODUCTS ───────── */
+    #products .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .product-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    }
+
+    .product-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(124,108,252,0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .product-card:hover {
+      border-color: var(--border-hi);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .product-card:hover::before { opacity: 1; }
+
+    .product-card.featured {
+      border-color: rgba(124,108,252,0.35);
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      padding: 2.5rem;
+      background: linear-gradient(135deg, rgba(124,108,252,0.07) 0%, var(--bg-card) 60%);
+    }
+
+    .product-card.featured::before {
+      background: linear-gradient(135deg, rgba(124,108,252,0.1) 0%, transparent 70%);
+      opacity: 1;
+    }
+
+    .product-card.coming-soon {
+      opacity: 0.65;
+    }
+
+    .product-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+
+    .badge-live {
+      color: #4ade80;
+      background: rgba(74,222,128,0.1);
+      border: 1px solid rgba(74,222,128,0.25);
+    }
+
+    .badge-soon {
+      color: var(--muted);
+      background: rgba(136,136,160,0.1);
+      border: 1px solid rgba(136,136,160,0.2);
+    }
+
+    .badge-live::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .product-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .product-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-tagline {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      line-height: 1.65;
+    }
+
+    .product-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .product-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .product-features li::before {
+      content: '✓';
+      color: var(--accent2);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .product-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 1.75rem;
+      padding: 0.6rem 1.4rem;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.88rem;
+      border-radius: 8px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .product-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .product-visual {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      font-family: 'Inter', monospace;
+    }
+
+    .reply-preview {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .reply-bubble {
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    .bubble-user {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      align-self: flex-start;
+      max-width: 85%;
+    }
+
+    .bubble-ai {
+      background: rgba(124,108,252,0.1);
+      border: 1px solid rgba(124,108,252,0.25);
+      color: var(--text);
+      align-self: flex-end;
+      max-width: 90%;
+    }
+
+    .bubble-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .label-user { color: var(--muted); }
+    .label-ai   { color: var(--accent); }
+
+    /* ───────── VALUES / WHY ───────── */
+    #why {
+      background: var(--bg-card);
+      border-radius: 24px;
+      padding: 4rem clamp(2rem, 5vw, 4rem);
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .why-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      margin-top: 3rem;
+    }
+
+    .why-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .why-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .why-icon-1 { background: rgba(124,108,252,0.12); }
+    .why-icon-2 { background: rgba(94,234,212,0.12); }
+    .why-icon-3 { background: rgba(244,114,182,0.12); }
+    .why-icon-4 { background: rgba(251,191,36,0.12); }
+
+    .why-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .why-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ───────── ROADMAP ───────── */
+    .roadmap-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      margin-top: 2.5rem;
+    }
+
+    .roadmap-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .roadmap-card:hover { border-color: var(--border-hi); }
+
+    .roadmap-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .roadmap-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .roadmap-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ───────── CTA BANNER ───────── */
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(124,108,252,0.15) 0%, rgba(94,234,212,0.08) 100%);
+      border: 1px solid rgba(124,108,252,0.25);
+      border-radius: 20px;
+      padding: 4rem clamp(2rem, 5vw, 4rem);
+      text-align: center;
+      max-width: 1120px;
+      margin: 0 auto 5rem;
+    }
+
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-banner p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ───────── FOOTER ───────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: none;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .footer-logo {
+      font-weight: 700;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    /* ───────── DIVIDER LINE ───────── */
+    .divider {
+      max-width: 1120px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ───────── RESPONSIVE ───────── */
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+
+      .product-card.featured {
+        grid-template-columns: 1fr;
+      }
+
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <!-- Logo mark -->
+      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="28" height="28" rx="7" fill="#7c6cfc"/>
+        <path d="M8 8h7a5 5 0 0 1 0 10H8V8Z" fill="white" opacity="0.9"/>
+        <circle cx="19" cy="20" r="3" fill="white" opacity="0.5"/>
+      </svg>
+      Predicate
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why">Why Predicate</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+    </ul>
+
+    <a href="https://chromewebstore.google.com" class="nav-cta" target="_blank" rel="noopener">
+      Try ReplyWise →
+    </a>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <div class="hero">
+    <span class="hero-badge">Now Available — ReplyWise for Chrome</span>
+
+    <h1>
+      Smarter Tools for<br />
+      <span>Cross-Border Sellers</span>
+    </h1>
+
+    <p class="hero-sub">
+      Predicate builds AI-powered SaaS tools that help international e-commerce sellers
+      operate more efficiently—from handling customer feedback to running full store operations.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">
+        Explore Products
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#why" class="btn-secondary">
+        Learn More
+      </a>
+    </div>
+  </div>
+
+  <!-- ─── PRODUCTS ─── -->
+  <section id="products">
+    <div class="section-header">
+      <p class="section-label">Products</p>
+      <h2 class="section-title">Everything you need to sell globally</h2>
+      <p class="section-sub">
+        A growing suite of tools purpose-built for cross-border e-commerce — from AI-powered customer communication to full operational management.
+      </p>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- ReplyWise — Featured, Live -->
+      <div class="product-card featured">
+        <div>
+          <span class="product-badge badge-live">● Live Now</span>
+          <span class="product-icon">💬</span>
+          <h3 class="product-name">ReplyWise</h3>
+          <p class="product-tagline">
+            AI-powered Chrome Extension that intelligently drafts replies to customer reviews and feedback — so you can respond faster, more professionally, and at scale.
+          </p>
+          <ul class="product-features">
+            <li>One-click AI reply generation for any customer review</li>
+            <li>Tone and context awareness — empathetic, professional, or concise</li>
+            <li>Works directly inside your store management interface</li>
+            <li>Supports Shopify, Amazon, and independent store platforms</li>
+            <li>Multi-language output for global storefronts</li>
+          </ul>
+          <a href="https://chromewebstore.google.com" class="product-cta" target="_blank" rel="noopener">
+            Add to Chrome — Free
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <!-- Preview mockup -->
+        <div class="product-visual">
+          <div class="reply-preview">
+            <div>
+              <p class="bubble-label label-user">Customer Review</p>
+              <div class="reply-bubble bubble-user">
+                "The item arrived damaged and customer support took forever to respond. Really disappointed with this purchase."
+              </div>
+            </div>
+            <div style="text-align:right">
+              <p class="bubble-label label-ai">ReplyWise AI</p>
+              <div class="reply-bubble bubble-ai">
+                "We sincerely apologize for this experience — a damaged item is never acceptable. We've flagged this with our logistics team and will reach out within 24 hours to make this right. Thank you for your honest feedback."
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ERP — Coming Soon -->
+      <div class="product-card coming-soon">
+        <span class="product-badge badge-soon">Coming Soon</span>
+        <span class="product-icon">🏭</span>
+        <h3 class="product-name">StoreOps ERP</h3>
+        <p class="product-tagline">Full-chain operations management for multi-platform cross-border sellers.</p>
+        <ul class="product-features">
+          <li>Inventory, orders, and fulfillment in one dashboard</li>
+          <li>Shopify, WooCommerce &amp; Amazon unified</li>
+          <li>Automated restocking and supplier workflows</li>
+        </ul>
+      </div>
+
+      <!-- Market Research — Coming Soon -->
+      <div class="product-card coming-soon">
+        <span class="product-badge badge-soon">Coming Soon</span>
+        <span class="product-icon">🔍</span>
+        <h3 class="product-name">MarketLens</h3>
+        <p class="product-tagline">AI-driven product selection and market research for cross-border commerce.</p>
+        <ul class="product-features">
+          <li>Trend detection across global marketplaces</li>
+          <li>Competitor &amp; pricing intelligence</li>
+          <li>Demand forecasting and niche scoring</li>
+        </ul>
+      </div>
+
+      <!-- Account Security — Coming Soon -->
+      <div class="product-card coming-soon">
+        <span class="product-badge badge-soon">Coming Soon</span>
+        <span class="product-icon">🔐</span>
+        <h3 class="product-name">SafeStore</h3>
+        <p class="product-tagline">Multi-account security and store management for sellers operating at scale.</p>
+        <ul class="product-features">
+          <li>Account isolation and risk monitoring</li>
+          <li>Multi-store dashboard with unified analytics</li>
+          <li>Anomaly detection and breach alerts</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ─── WHY PREDICATE ─── -->
+  <div id="why">
+    <p class="section-label">Why Predicate</p>
+    <h2 class="section-title">Built for the realities of global commerce</h2>
+    <p class="section-sub">
+      Cross-border selling is complex. We build tools that remove friction, automate the routine, and give you back time to grow.
+    </p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon why-icon-1">🤖</div>
+        <h3 class="why-title">AI-First, Always</h3>
+        <p class="why-desc">Every product is designed around modern AI — not bolted on as an afterthought. Intelligent automation from day one.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon why-icon-2">⚡</div>
+        <h3 class="why-title">Fast to Value</h3>
+        <p class="why-desc">Install and start getting results in minutes. No lengthy onboarding, no complicated setup — just tools that work.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon why-icon-3">🌍</div>
+        <h3 class="why-title">Global by Design</h3>
+        <p class="why-desc">Multi-language, multi-platform, multi-currency — built for sellers operating across borders, not just one market.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon why-icon-4">📈</div>
+        <h3 class="why-title">Scales With You</h3>
+        <p class="why-desc">From your first store to hundreds of SKUs across multiple platforms — our tools grow with your business without extra complexity.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── ROADMAP ─── -->
+  <section id="roadmap">
+    <p class="section-label">Roadmap</p>
+    <h2 class="section-title">What's coming next</h2>
+    <p class="section-sub">
+      We're actively building the next generation of cross-border commerce tools. Here's a glimpse of what's ahead.
+    </p>
+
+    <div class="roadmap-grid">
+      <div class="roadmap-card">
+        <p class="roadmap-tag">Q1 2026 ✓</p>
+        <p class="roadmap-name">ReplyWise</p>
+        <p class="roadmap-desc">AI reply assistant Chrome Extension — shipped and available now.</p>
+      </div>
+      <div class="roadmap-card">
+        <p class="roadmap-tag">Q2 2026</p>
+        <p class="roadmap-name">ReplyWise Pro</p>
+        <p class="roadmap-desc">Bulk reply management, custom tone profiles, and analytics dashboard.</p>
+      </div>
+      <div class="roadmap-card">
+        <p class="roadmap-tag">Q2 2026</p>
+        <p class="roadmap-name">MarketLens Beta</p>
+        <p class="roadmap-desc">AI-powered product research and market intelligence platform.</p>
+      </div>
+      <div class="roadmap-card">
+        <p class="roadmap-tag">Q3 2026</p>
+        <p class="roadmap-name">StoreOps ERP</p>
+        <p class="roadmap-desc">Unified multi-platform store management and operations hub.</p>
+      </div>
+      <div class="roadmap-card">
+        <p class="roadmap-tag">Q3 2026</p>
+        <p class="roadmap-name">SafeStore</p>
+        <p class="roadmap-desc">Account protection and multi-store security toolkit.</p>
+      </div>
+      <div class="roadmap-card">
+        <p class="roadmap-tag">Q4 2026</p>
+        <p class="roadmap-name">Predicate Platform</p>
+        <p class="roadmap-desc">Integrated suite bringing all tools under one unified dashboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA BANNER ─── -->
+  <div class="cta-banner">
+    <h2>Start with ReplyWise — it's free</h2>
+    <p>Install the Chrome Extension and respond to customer feedback smarter, starting today.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="https://chromewebstore.google.com" class="btn-primary" target="_blank" rel="noopener">
+        Add to Chrome
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="mailto:contact@predicate.pro" class="btn-secondary">
+        Contact Us
+      </a>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-left">
+      <span class="footer-logo">Predicate</span>
+      <span>·</span>
+      <span>© 2026 Predicate LLC. All rights reserved.</span>
+    </div>
+
+    <ul class="footer-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="mailto:contact@predicate.pro">Contact</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
