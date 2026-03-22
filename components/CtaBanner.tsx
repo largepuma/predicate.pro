@@ -7,20 +7,20 @@ const ArrowIcon = () => (
 export default function CtaBanner() {
   return (
     <div className="cta-banner">
-      <h2>Start with ReplyWise — it&apos;s free</h2>
-      <p>Install the Chrome Extension and respond to customer feedback smarter, starting today.</p>
+      <h2>Ready to Let AI Work for You?</h2>
+      <p>Start with a managed OpenClaw instance — or try ReplyWise for free and see what AI can do.</p>
       <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <a href="mailto:contact@predicate.pro" className="btn-primary">
+          Get Started
+          <ArrowIcon />
+        </a>
         <a
           href="https://chromewebstore.google.com/detail/replywise-ai-%E2%80%93-amazon-rev/aciobakkpieiophenjlakofponihfloe"
-          className="btn-primary"
+          className="btn-secondary"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Add to Chrome
-          <ArrowIcon />
-        </a>
-        <a href="mailto:contact@predicate.pro" className="btn-secondary">
-          Contact Us
+          Try ReplyWise Free
         </a>
       </div>
     </div>

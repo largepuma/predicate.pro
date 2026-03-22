@@ -11,18 +11,14 @@ export default function Nav() {
       </a>
 
       <ul className="nav-links">
+        <li><a href="#services">Services</a></li>
         <li><a href="#products">Products</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#why">Why Predicate</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
       </ul>
 
-      <a
-        href="https://chromewebstore.google.com/detail/replywise-ai-%E2%80%93-amazon-rev/aciobakkpieiophenjlakofponihfloe"
-        className="nav-cta"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Try ReplyWise →
+      <a href="mailto:contact@predicate.pro" className="nav-cta">
+        Get Started →
       </a>
     </nav>
   )

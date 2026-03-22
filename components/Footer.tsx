@@ -8,7 +8,9 @@ export default function Footer() {
       </div>
 
       <ul className="footer-links">
+        <li><a href="#services">Services</a></li>
         <li><a href="#products">Products</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
         <li><a href="mailto:contact@predicate.pro">Contact</a></li>
       </ul>

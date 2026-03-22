@@ -8,11 +8,11 @@ export default function Products() {
   return (
     <section id="products">
       <div className="section-header">
-        <p className="section-label">Products</p>
-        <h2 className="section-title">Everything you need to sell globally</h2>
+        <p className="section-label">Our Products</p>
+        <h2 className="section-title">Focused AI tools built for specific jobs</h2>
         <p className="section-sub">
-          A growing suite of tools purpose-built for cross-border e-commerce — from AI-powered
-          customer communication to full operational management.
+          Alongside our managed services, we build vertical AI products that solve real problems
+          in specific industries — starting with cross-border e-commerce.
         </p>
       </div>
 
@@ -25,8 +25,8 @@ export default function Products() {
             <span className="product-icon">💬</span>
             <h3 className="product-name">ReplyWise</h3>
             <p className="product-tagline">
-              AI-powered Chrome Extension that intelligently drafts replies to customer reviews
-              and feedback — so you can respond faster, more professionally, and at scale.
+              Our first vertical AI tool. ReplyWise intelligently drafts replies to customer reviews
+              and feedback — so you can respond faster, more professionally, and at scale across any storefront.
             </p>
             <ul className="product-features">
               <li>One-click AI reply generation for any customer review</li>
