@@ -7,8 +7,8 @@ const ArrowIcon = () => (
 export default function CtaBanner() {
   return (
     <div className="cta-banner">
-      <h2>Ready to Let AI Work for You?</h2>
-      <p>Start with a managed OpenClaw instance — or try ReplyWise for free and see what AI can do.</p>
+      <h2>Put AI to work.</h2>
+      <p>Deploy a managed agent or start with a free product today. No setup. No contracts. Just AI that earns its keep.</p>
       <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
         <a href="mailto:contact@predicate.pro" className="btn-primary">
           Get Started

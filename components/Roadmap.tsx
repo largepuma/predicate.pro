@@ -1,7 +1,7 @@
 const items = [
   { tag: 'Q1 2026 ✓', name: 'ReplyWise', desc: 'AI reply assistant Chrome Extension — shipped and live on the Chrome Web Store.' },
-  { tag: 'Q1 2026 ✓', name: 'OpenClaw Hosting', desc: 'Managed OpenClaw deployment service — now available. Your AI agent, zero setup.' },
-  { tag: 'Q2 2026', name: 'OpenClaw Pro', desc: 'Custom Skills, automation workflows, multi-app support, and usage analytics dashboard.' },
+  { tag: 'Q1 2026 ✓', name: 'Managed AI Agents', desc: 'Managed AI agent deployment — now live. Your 24/7 agent, fully configured, zero setup.' },
+  { tag: 'Q2 2026', name: 'Agent Pro', desc: 'Custom Skills, automation workflows, multi-app support, and a full usage analytics dashboard.' },
   { tag: 'Q2 2026', name: 'ReplyWise Pro', desc: 'Bulk reply management, custom tone profiles, and team analytics.' },
   { tag: 'Q3 2026', name: 'Business Plans', desc: 'Multi-instance deployments, dedicated infrastructure, and team management.' },
   { tag: 'Q4 2026', name: 'Predicate Platform', desc: 'Unified dashboard bringing all your AI services and products together.' },
