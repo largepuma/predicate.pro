@@ -5,9 +5,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800'] })
 
 export const metadata: Metadata = {
-  title: 'Predicate — Your Bridge to the World of AI',
+  title: 'Predicate — Managed AI. Real Results.',
   description:
-    'Predicate is an AI service provider and OpenClaw managed hosting specialist. We deploy and manage powerful AI agents so you can imagine more, create more, and solve more — without the technical setup.',
+    'Predicate is an AI services company. We deploy managed AI agents, build purpose-built AI products, and integrate intelligence into your workflows — without the setup, the maintenance, or the headaches.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

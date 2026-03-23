@@ -5,7 +5,7 @@ const plans = [
     period: '/mo',
     desc: 'For individuals who want a personal AI without the technical setup.',
     features: [
-      'OpenClaw instance, fully managed',
+      '1 managed AI agent, fully configured',
       '1 chat app connected (WhatsApp / Telegram)',
       'Persistent memory across sessions',
       'Basic email support',
@@ -36,7 +36,7 @@ const plans = [
     period: '',
     desc: 'For teams and businesses with advanced requirements and scale.',
     features: [
-      'Multiple OpenClaw instances',
+      'Multi-agent deployment',
       'Dedicated infrastructure',
       'Custom integrations',
       'SLA & dedicated support',
@@ -67,7 +67,7 @@ export default function Pricing() {
         <p className="section-label">Pricing</p>
         <h2 className="section-title">Simple, Transparent Pricing</h2>
         <p className="section-sub">
-          Pay for what you use. API costs (Claude, OpenAI, etc.) are billed separately at cost — no markup.
+          No surprises. API usage (Claude, OpenAI, or local models) billed at cost — zero markup, always.
         </p>
       </div>
 
@@ -100,7 +100,7 @@ export default function Pricing() {
       </div>
 
       <p className="pricing-note">
-        * API usage (Claude, OpenAI, or local models) billed separately at cost. We pass through with zero markup.
+        * API usage (Claude, OpenAI, or local models) billed at cost. We pass through with zero markup — no hidden fees, ever.
       </p>
     </section>
   )

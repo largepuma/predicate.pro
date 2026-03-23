@@ -1,27 +1,27 @@
 const items = [
   {
-    icon: '🌉',
+    icon: '🚫',
     cls: 'why-icon-1',
-    title: 'We Are the Bridge',
-    desc: 'You shouldn\'t need an engineering team to benefit from AI. We sit between you and the complexity — handling setup, maintenance, and updates.',
+    title: 'No Engineering Team Needed',
+    desc: 'You shouldn\'t need a backend dev to deploy AI. We handle setup, maintenance, and updates — so you get the output without hiring for the infrastructure.',
   },
   {
     icon: '⚡',
     cls: 'why-icon-2',
-    title: 'Zero Setup, Full Power',
-    desc: 'Most AI tools require configuration. Ours don\'t. We deploy, connect, and configure everything — you just start talking.',
+    title: 'Running Before Your Coffee Gets Cold',
+    desc: 'From zero to a configured, connected AI agent — in hours, not weeks. We handle deployment and integration end to end. You just show up.',
   },
   {
     icon: '🧠',
     cls: 'why-icon-3',
-    title: 'Built to Last',
-    desc: 'Unlike chatbots that forget you the moment you close the tab, your OpenClaw instance maintains persistent memory and runs around the clock.',
+    title: 'AI That Actually Knows You',
+    desc: 'Unlike chat sessions that reset, your agent builds context over time. The longer you use it, the sharper it gets — persistent memory that actually persists.',
   },
   {
     icon: '🔒',
     cls: 'why-icon-4',
-    title: 'Privacy by Design',
-    desc: 'Your data stays where it belongs. We support self-hosted and privacy-first configurations for users who need full control.',
+    title: 'Your Data. Full Stop.',
+    desc: 'We support self-hosted and privacy-first configurations for users who need full control. No training on your data. No surprises in the fine print.',
   },
 ]
 
@@ -29,10 +29,9 @@ export default function Why() {
   return (
     <div id="why">
       <p className="section-label">Why Predicate</p>
-      <h2 className="section-title">The smarter way to get AI working for you</h2>
+      <h2 className="section-title">AI that does the job — not just demos it</h2>
       <p className="section-sub">
-        AI is powerful — but only if you can actually use it. We remove every barrier between
-        you and the intelligence you need.
+        The gap between &ldquo;AI is impressive&rdquo; and &ldquo;AI is actually useful for my business&rdquo; is exactly where we work.
       </p>
 
       <div className="why-grid">

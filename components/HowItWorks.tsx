@@ -1,20 +1,20 @@
 const steps = [
   {
     num: '01',
-    title: 'We Deploy',
-    desc: 'We spin up your OpenClaw instance on secure infrastructure in minutes — fully configured and ready to go. No setup required on your end.',
+    title: 'We Set You Up',
+    desc: 'Tell us your use case. We configure your AI agent, connect your channels, and have everything running — typically within 24 hours. Nothing to install on your end.',
     icon: '🚀',
   },
   {
     num: '02',
     title: 'You Connect',
-    desc: 'Link WhatsApp, Telegram, Discord, or any chat app you already use. Your AI meets you where you are — no new apps to learn.',
+    desc: 'Your agent lives wherever you already work: WhatsApp, Telegram, Discord, or a web interface. No new apps, no new logins. It meets you where you are.',
     icon: '🔗',
   },
   {
     num: '03',
-    title: 'It Works for You',
-    desc: 'Your AI runs 24/7 — handles tasks, answers questions, builds memory, and gets smarter over time. Even while you sleep.',
+    title: 'It Works. Continuously.',
+    desc: 'Your agent runs around the clock — completing tasks, answering questions, building context. Even at 3am on a Sunday. That\'s what earns its keep.',
     icon: '⚡',
   },
 ]
@@ -24,9 +24,9 @@ export default function HowItWorks() {
     <section id="how-it-works">
       <div className="section-header">
         <p className="section-label">How It Works</p>
-        <h2 className="section-title">Your Personal AI in Three Steps</h2>
+        <h2 className="section-title">From zero to a working AI agent — in three steps</h2>
         <p className="section-sub">
-          From zero to a 24/7 intelligent assistant — without writing a single line of code.
+          No engineering. No configuration. No waiting weeks. Just AI that gets to work.
         </p>
       </div>
 

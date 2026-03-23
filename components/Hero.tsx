@@ -7,25 +7,26 @@ const ArrowIcon = () => (
 export default function Hero() {
   return (
     <div className="hero">
-      <span className="hero-badge">✦ OpenClaw Managed Hosting — Now Available</span>
+      <span className="hero-badge">✦ AI Services · Managed Agents · Vertical Products</span>
 
       <h1>
-        Your Bridge to<br />
-        <span>the World of AI</span>
+        Managed AI.<br />
+        <span>Real results.</span><br />
+        No asterisk.
       </h1>
 
       <p className="hero-sub">
-        Predicate deploys and manages powerful AI agents on your behalf — available 24/7,
-        connected to your chat apps, and built to help you imagine more, create more, and solve more.
+        Predicate deploys and manages AI agents, builds purpose-built products, and integrates
+        intelligence into your workflows — without the setup, the maintenance, or the headaches.
       </p>
 
       <div className="hero-actions">
         <a href="#services" className="btn-primary">
-          Start with OpenClaw
+          Get Started
           <ArrowIcon />
         </a>
-        <a href="#services" className="btn-secondary">
-          Explore Our Services
+        <a href="#products" className="btn-secondary">
+          Explore Products
         </a>
       </div>
     </div>
