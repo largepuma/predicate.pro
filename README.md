@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Predicate
 
-## Getting Started
+Official website for [predicate.pro](https://predicate.pro).
 
-First, run the development server:
+Predicate builds privacy-first AI access and inference tools for Chinese-speaking users, creators, and developers.
+
+## Current Website Direction
+
+The site is intentionally a single English landing page for the new company direction:
+
+- Private AI access for Chinese-speaking creators and builders
+- Chinese-first model routing with Qwen and DeepSeek
+- Global model fallback through providers such as OpenRouter
+- Minimal data retention and clearer privacy boundaries
+- Developer-ready inference infrastructure through a Privacy API Gateway
+
+## Product Tracks
+
+| Track | Audience | Description |
+| --- | --- | --- |
+| Private Chat | Chinese-speaking AI users and creators | A Chinese-first Venice-like AI chat experience with stable access, localized payments, and user-controlled memory. |
+| Creative SaaS | Writers, roleplay users, and creator communities | Long-memory characters, bilingual role libraries, worldbuilding state, and workflows for fiction, RPGs, and interactive storytelling. |
+| Privacy API Gateway | Developers and AI product teams | An OpenAI-compatible inference proxy with routing, fallback, project isolation, cost attribution, and minimal prompt retention. |
+| Enterprise Privacy Inference | Regulated teams in legal, finance, healthcare, and enterprise AI | High-touch private deployment, auditability, and verifiable privacy pilots where concrete customer demand exists. |
+
+## Strategic Notes
+
+The detailed business direction is documented in [`docs/business-areas.md`](docs/business-areas.md).
+
+Recommended build order:
+
+1. Build the Privacy API Gateway foundation.
+2. Validate Chinese-first private chat as the consumer-facing entry point.
+3. Test one focused creative writing or roleplay vertical.
+4. Keep enterprise privacy inference as a high-touch pilot track until there is a concrete customer use case.
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org) App Router
+- React
+- TypeScript
+- Deployed on [Vercel](https://vercel.com)
+
+## Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## Contact
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[contact@predicate.pro](mailto:contact@predicate.pro)
